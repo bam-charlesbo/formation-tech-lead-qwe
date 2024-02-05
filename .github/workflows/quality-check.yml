@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  test_ci:
+    name: job
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v1
+      - name: setup & test
+        run: |
+          npm i
+          npm test
+      
